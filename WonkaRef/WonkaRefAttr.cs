@@ -2,7 +2,7 @@
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-namespace PmdRef
+namespace WonkaRef
 {
     /// <summary>
     /// 
@@ -18,8 +18,8 @@ namespace PmdRef
         {
             AttrId = -1;
 
-            AttrName = TabCol = DisplayName = null;
-            TabName = ColName = Description = null;
+            AttrName = TabCol  = DisplayName = null;
+            TabName  = ColName = Description = null;
 
             FieldId = GroupId = MaxLength = -1;
 
@@ -32,8 +32,8 @@ namespace PmdRef
 
             Properties = new HashSet<string>();
 
-            IsAudited        = IsBookInHand = IsDate = IsDecimal = false;
-            IsFileImportAble = IsMaintainable = IsNumeric = IsRefCd = false;
+            IsAudited      = IsDate    = IsDecimal = false;
+            IsMaintainable = IsNumeric = IsRefCd = false;
 
             RefCdDomainAttrName = null;
         }
@@ -109,12 +109,6 @@ namespace PmdRef
 
         [DataMember]
         public bool IsMaintainable { get; set; }
-
-        [DataMember]
-        public bool IsBookInHand { get; set; }
-
-        [DataMember]
-        public bool IsFileImportAble { get; set; }
 
         [DataMember]
         public bool IsAudited { get; set; }
