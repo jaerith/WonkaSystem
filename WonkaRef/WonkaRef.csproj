@@ -44,6 +44,8 @@
     <Compile Include="WonkaAttrCollection.cs" />
     <Compile Include="WonkaRefAttr.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WonkaRefDomainValue.cs" />
+    <Compile Include="WonkaRefDomainDependency.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
