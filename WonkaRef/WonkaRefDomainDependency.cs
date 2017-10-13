@@ -18,7 +18,7 @@ namespace WonkaRef
     ///     
     /// </summary>
     [DataContract(Namespace = "http://sample.wonkasystem.com")]
-    [XmlType(TypeName = "CodeDependency")]
+    [XmlType(TypeName = "DomainDependency")]
     public class WonkaRefDomainDependency
     {
         public WonkaRefDomainDependency()

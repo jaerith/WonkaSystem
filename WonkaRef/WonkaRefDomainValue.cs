@@ -10,7 +10,7 @@ namespace WonkaRef
     ///     
     /// </summary>
     [DataContract(Namespace = "http://sample.wonkasystem.com")]
-    [XmlType(TypeName = "CodeDef")]
+    [XmlType(TypeName = "DomainValue")]
     public class WonkaRefDomainValue
     {
         public WonkaRefDomainValue()
