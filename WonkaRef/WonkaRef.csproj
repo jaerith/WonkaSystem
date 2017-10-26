@@ -51,6 +51,7 @@
     <Compile Include="WonkaRefField.cs" />
     <Compile Include="WonkaRefGroup.cs" />
     <Compile Include="WonkaRefIdXref.cs" />
+    <Compile Include="WonkaRefQueryCriteria.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
