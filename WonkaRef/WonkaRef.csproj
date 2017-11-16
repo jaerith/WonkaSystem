@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IMetadataRetrievable.cs" />
     <Compile Include="WonkaAttrCollection.cs" />
     <Compile Include="WonkaRefAttr.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -48,6 +49,7 @@
     <Compile Include="WonkaRefDomainDependencyDef.cs" />
     <Compile Include="WonkaRefDomainValue.cs" />
     <Compile Include="WonkaRefDomainDependency.cs" />
+    <Compile Include="WonkaRefEnvironment.cs" />
     <Compile Include="WonkaRefField.cs" />
     <Compile Include="WonkaRefGroup.cs" />
     <Compile Include="WonkaRefIdXref.cs" />
