@@ -8,9 +8,9 @@ namespace WonkaRef
     /// 
     /// </summary>
     [DataContract(Namespace = "http://sample.wonkasystem.com")]
-    public class WonkaRefRefSource
+    public class WonkaRefSource
     {
-        public WonkaRefRefSource()
+        public WonkaRefSource()
         {
             SourceId = -1;
 
