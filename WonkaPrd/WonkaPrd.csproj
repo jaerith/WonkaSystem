@@ -41,8 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="WonkaPidException.cs" />
     <Compile Include="WonkaPrdException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WonkaPrdGroupDataRow.cs" />
+    <Compile Include="WonkaPrdGroupDataRowKey.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WonkaRef\WonkaRef.csproj">
