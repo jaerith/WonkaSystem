@@ -21,7 +21,7 @@ namespace WonkaRef
     /// 
     /// NOTE: Groups can be supersets of Fields, but not vice versa.
     /// 
-    /// NOTE: Aside from the Core group (ISBN, Title, etc.), all groups have the potential of being multiple instances. 
+    /// NOTE: Aside from a dedicated Main group (product identifier, name, etc.), all groups should have the potential of being multiple instances. 
     ///     
     /// </summary>
     [DataContract(Namespace = "http://sample.wonkasystem.com")]
