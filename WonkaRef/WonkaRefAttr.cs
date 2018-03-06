@@ -32,8 +32,8 @@ namespace WonkaRef
 
             Properties = new HashSet<string>();
 
-            IsAudited      = IsDate    = IsDecimal = false;
-            IsMaintainable = IsNumeric = IsRefCd = false;
+            IsAudited      = IsDate    = IsDecimal  = false;
+            IsMaintainable = IsNumeric = IsDomainCd = false;
 
             RefCdDomainAttrName = null;
         }
@@ -105,7 +105,7 @@ namespace WonkaRef
         public bool IsNumeric { get; set; }
 
         [DataMember]
-        public bool IsRefCd { get; set; }
+        public bool IsDomainCd { get; set; }
 
         [DataMember]
         public bool IsMaintainable { get; set; }
