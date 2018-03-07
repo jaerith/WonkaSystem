@@ -22,7 +22,7 @@ namespace WonkaSystem.TestHarness
             AttrCache.Add(new WonkaRefAttr() { AttrId = 1, AttrName = "BankAccountID",    FieldId = 101, GroupId = 1, IsAudited = false, IsNumeric = true });
             AttrCache.Add(new WonkaRefAttr() { AttrId = 2, AttrName = "BankAccoutName",   FieldId = 102, GroupId = 1, IsAudited = true,  MaxLength = 1024 });
             AttrCache.Add(new WonkaRefAttr() { AttrId = 3, AttrName = "AccountType",      FieldId = 2,   GroupId = 2, IsAudited = false, MaxLength = 1024 });
-            AttrCache.Add(new WonkaRefAttr() { AttrId = 4, AttrName = "AccountRank",      FieldId = 2,   GroupId = 2, IsAudited = true,  IsNumeric = true, MaxValue = 256 });
+            AttrCache.Add(new WonkaRefAttr() { AttrId = 4, AttrName = "AccountRank",      FieldId = 2,   GroupId = 2, IsAudited = true,  IsNumeric = true, MaxValue = "256" });
             AttrCache.Add(new WonkaRefAttr() { AttrId = 5, AttrName = "AccountCurrency",  FieldId = 2,   GroupId = 2, IsAudited = true,  MaxLength = 3 });
             AttrCache.Add(new WonkaRefAttr() { AttrId = 6, AttrName = "AccountCurrValue", FieldId = 2,   GroupId = 2, IsAudited = true,  IsDecimal = true });
 
