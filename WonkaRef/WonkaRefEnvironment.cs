@@ -60,7 +60,7 @@ namespace WonkaRef
 
                 IdXref.GroupIdToFieldIds[TmpAttribute.GroupId].Add(TmpAttribute.FieldId);
 
-                if (TmpAttribute.ColName == GetStandardByStdName("GSCName").StandardValue)
+                if (!String.IsNullOrEmpty(TmpAttribute.ColName) && (TmpAttribute.ColName == GetStandardByStdName("GSCName").StandardValue))
                     IdXref.GroupIdToGroupSeqAttrId[TmpAttribute.GroupId] = TmpAttribute.AttrId;
 
                 AttrMap[TmpAttribute.AttrId] = TmpAttribute;
