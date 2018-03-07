@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WonkaRef", "WonkaRef\WonkaR
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WonkaPrd", "WonkaPrd\WonkaPrd.csproj", "{3C3F0446-5FBF-4AED-B4C0-A6D96C905445}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WonkaBre", "WonkaBre\WonkaBre.csproj", "{D3F26FB8-89AC-44A5-96C3-6A785AF0DE51}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{3C3F0446-5FBF-4AED-B4C0-A6D96C905445}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C3F0446-5FBF-4AED-B4C0-A6D96C905445}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C3F0446-5FBF-4AED-B4C0-A6D96C905445}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3F26FB8-89AC-44A5-96C3-6A785AF0DE51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3F26FB8-89AC-44A5-96C3-6A785AF0DE51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3F26FB8-89AC-44A5-96C3-6A785AF0DE51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3F26FB8-89AC-44A5-96C3-6A785AF0DE51}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
