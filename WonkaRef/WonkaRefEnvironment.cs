@@ -45,6 +45,9 @@ namespace WonkaRef
 
             foreach (WonkaRefAttr TmpAttribute in AttrCache)
             {
+                if (TmpAttribute.IsKey)
+                    AttrKeys.Add(TmpAttribute);
+                
                 if (!IdXref.FieldIdToAttrIds.Keys.Contains(TmpAttribute.FieldId))
                     IdXref.FieldIdToAttrIds[TmpAttribute.FieldId] = new HashSet<int>();
 
@@ -288,6 +291,8 @@ namespace WonkaRef
         #region Standard Metadata Cache (Minimum Set)
 
         public List<WonkaRefAttr>             AttrCache { get; }
+        
+        public List<WonkaRefAttr>             AttrKeys { get; }
 
         private Dictionary<int, WonkaRefAttr> AttrMap { get; }
 
