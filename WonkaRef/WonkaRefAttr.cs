@@ -20,6 +20,8 @@ namespace WonkaRef
 
             AttrName = TabCol  = DisplayName = null;
             TabName  = ColName = Description = null;
+            
+            IsKey = false;
 
             FieldId = GroupId = MaxLength = -1;
 
@@ -43,6 +45,9 @@ namespace WonkaRef
 
         [DataMember]
         public string AttrName { get; set; }
+        
+        [DataMember]
+        public bool IsKey { get; set; }
 
         [DataMember]
         public string TabCol { get; set; }
