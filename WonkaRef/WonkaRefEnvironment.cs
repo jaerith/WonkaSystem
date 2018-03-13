@@ -37,6 +37,7 @@ namespace WonkaRef
             // NOTE: To be implemented later
             // CodeDefCache           = pMetadataRetrievable.GetCodeDefCache();
 
+            AttrKeys       = new List<WonkaRefAttr>();
             AttrMap        = new Dictionary<int, WonkaRefAttr>();
             FieldMap       = new Dictionary<int, WonkaRefField>();
             GroupMap       = new Dictionary<int, WonkaRefGroup>();
