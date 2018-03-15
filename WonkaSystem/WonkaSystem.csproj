@@ -51,6 +51,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\WonkaBre\WonkaBre.csproj">
+      <Project>{d3f26fb8-89ac-44a5-96c3-6a785af0de51}</Project>
+      <Name>WonkaBre</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WonkaPrd\WonkaPrd.csproj">
       <Project>{3c3f0446-5fbf-4aed-b4c0-a6d96c905445}</Project>
       <Name>WonkaPrd</Name>
