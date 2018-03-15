@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<RuleTree xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+   <if description="Set the status for the incoming record">
+      <criteria op="AND">
+         <eval>(N.BankAccoutName) POPULATED</eval>
+         <eval>(N.BankAccoutName) == ('JohnSmithFirstCheckingAccount')</eval>
+      </criteria>
+
+	  <if description="SaleableCd Mapping for E (Inner)">
+           <criteria op="OR">
+               <eval>(O.AccountStatus) NOT POPULATED</eval>
+               <eval>(O.AccountStatus) == ('OOS')</eval>
+			   <eval>(O.AccountCurrValue) LT (10.00)</eval>
+			   <eval>(N.AccountCurrValue) LT (10.00)</eval>
+           </criteria>
+
+           <validate err="severe">
+               <criteria op="AND">
+                   <eval>(N.AccountStatus) ASSIGN ('OOS')</eval>
+               </criteria>
+
+               <failure_message/>
+               <success_message/>
+           </validate>           
+       </if>
+
+	   <if description="SaleableCd Mapping for S">
+			<criteria op="AND">
+                <eval>(N.AccountType) POPULATED</eval>
+                <eval>(N.AccountType) != (O.AccountType)</eval>
+            </criteria>
+
+            <validate err="severe">
+                <criteria op="AND">
+                    <eval>(N.AccountType) IN ('Checking', 'Savings', 'Tax Haven in Cayman')</eval>
+                </criteria>
+
+                <failure_message/>
+                <success_message/>
+            </validate>
+		</if>
+
+   </if>	
+    
+</RuleTree>
