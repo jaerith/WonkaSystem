@@ -1,46 +1,54 @@
 <?xml version="1.0"?>
 <RuleTree xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
+   <!-- 
+    "N." denotes records that have been provided to the rules engine via an API call.  Usually, these are 
+    incoming records that contain data being submitted as candidates for an insert/update.
+   -->
    <if description="Set the status for the incoming record">
       <criteria op="AND">
          <eval>(N.BankAccoutName) POPULATED</eval>
          <eval>(N.BankAccoutName) == ('JohnSmithFirstCheckingAccount')</eval>
       </criteria>
 
-	  <if description="SaleableCd Mapping for E (Inner)">
-           <criteria op="OR">
-               <eval>(O.AccountStatus) NOT POPULATED</eval>
-               <eval>(O.AccountStatus) == ('OOS')</eval>
-			   <eval>(O.AccountCurrValue) LT (10.00)</eval>
-			   <eval>(N.AccountCurrValue) LT (10.00)</eval>
-           </criteria>
+      <!-- 
+       "O." denotes records that have been pulled by the rules engine from a persistent layer (database, 
+       blockchain storage, etc.).  Usually, these are 'current' records contained in storage and will be used to 
+       make comparitive evaluations against the incoming record.
+      -->
+      <if description="SaleableCd Mapping for E (Inner)">
+         <criteria op="OR">
+            <eval>(O.AccountStatus) NOT POPULATED</eval>
+            <eval>(O.AccountStatus) == ('OOS')</eval>
+	    <eval>(O.AccountCurrValue) LT (10.00)</eval>
+	    <eval>(N.AccountCurrValue) LT (10.00)</eval>
+         </criteria>
 
-           <validate err="severe">
-               <criteria op="AND">
-                   <eval>(N.AccountStatus) ASSIGN ('OOS')</eval>
-               </criteria>
-
-               <failure_message/>
-               <success_message/>
-           </validate>           
-       </if>
-
-	   <if description="SaleableCd Mapping for S">
-			<criteria op="AND">
-                <eval>(N.AccountType) POPULATED</eval>
-                <eval>(N.AccountType) != (O.AccountType)</eval>
+         <validate err="severe">
+            <criteria op="AND">
+               <eval>(N.AccountStatus) ASSIGN ('OOS')</eval>
             </criteria>
 
-            <validate err="severe">
-                <criteria op="AND">
-                    <eval>(N.AccountType) IN ('Checking', 'Savings', 'Tax Haven in Cayman')</eval>
-                </criteria>
+            <failure_message/>
+            <success_message/>
+         </validate>           
+      </if>
 
-                <failure_message/>
-                <success_message/>
-            </validate>
-		</if>
+      <if description="SaleableCd Mapping for S">
+         <criteria op="AND">
+            <eval>(N.AccountType) POPULATED</eval>
+            <eval>(N.AccountType) != (O.AccountType)</eval>
+         </criteria>
 
-   </if>	
-    
+         <validate err="severe">
+            <criteria op="AND">
+               <eval>(N.AccountType) IN ('Checking', 'Savings', 'Tax Haven in Cayman')</eval>
+            </criteria>
+
+            <failure_message/>
+            <success_message/>
+         </validate>
+      </if>
+   </if>
+	
 </RuleTree>
