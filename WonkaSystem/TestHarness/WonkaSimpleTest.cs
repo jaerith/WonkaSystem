@@ -22,12 +22,12 @@ namespace WonkaSystem.TestHarness
             moMetadataSource = new WonkaMetadataTestSource();
         }
 
-		public void Execute()
+	public void Execute()
         {
             WonkaRefEnvironment RefEnv =
                 WonkaRefEnvironment.CreateInstance(false, moMetadataSource);
 
-			WonkaRefAttr AccountStsAttr = RefEnv.GetAttributeByAttrName("AccountStatus");
+	    WonkaRefAttr AccountStsAttr = RefEnv.GetAttributeByAttrName("AccountStatus");
 
             WonkaProduct NewProduct = GetNewProduct();            
             
@@ -36,17 +36,17 @@ namespace WonkaSystem.TestHarness
             /* 
              * NOT YET READY
              *
-			// Cue the rules engine
-			WonkaBreRulesEngine RulesEngine =
+	    // Cue the rules engine
+	    WonkaBreRulesEngine RulesEngine =
                 new WonkaBreRulesEngine(CONST_SIMPLE_RULES_FILEPATH, moMetadataSource);
 
             RulesEngine.GetCurrentProductDelegate = GetOldProduct;
 
             WonkaBre.Reporting.WonkaBreRuleTreeReport Report = RulesEngine.Validate(NewProduct);
 
-			string sStatusValueAfter = GetAttributeValue(NewProduct, AccountStsAttr);
+	    string sStatusValueAfter = GetAttributeValue(NewProduct, AccountStsAttr);
 
-			if (Report.GetRuleSetFailureCount() > 0)
+	    if (Report.GetRuleSetFailureCount() > 0)
             {
                 throw new Exception("Oh heavens to Betsy! Something bad happened!"); 
             }
@@ -80,10 +80,10 @@ namespace WonkaSystem.TestHarness
         {
             WonkaRefEnvironment PmdRefEnv           = WonkaRefEnvironment.GetInstance();
             WonkaRefAttr        AccountIDAttr       = PmdRefEnv.GetAttributeByAttrName("BankAccountID");
-			WonkaRefAttr        AccountNameAttr     = PmdRefEnv.GetAttributeByAttrName("BankAccoutName");
-			WonkaRefAttr        AccountStsAttr      = PmdRefEnv.GetAttributeByAttrName("AccountStatus");
+	    WonkaRefAttr        AccountNameAttr     = PmdRefEnv.GetAttributeByAttrName("BankAccoutName");
+	    WonkaRefAttr        AccountStsAttr      = PmdRefEnv.GetAttributeByAttrName("AccountStatus");
             WonkaRefAttr        AccountCurrValAttr  = PmdRefEnv.GetAttributeByAttrName("AccountCurrValue");
-			WonkaRefAttr        AccountTypeAttr     = PmdRefEnv.GetAttributeByAttrName("AccountType");
+	    WonkaRefAttr        AccountTypeAttr     = PmdRefEnv.GetAttributeByAttrName("AccountType");
             WonkaRefAttr        AccountCurrencyAttr = PmdRefEnv.GetAttributeByAttrName("AccountCurrency");
 
             WonkaProduct NewProduct = new WonkaProduct();
@@ -93,31 +93,31 @@ namespace WonkaSystem.TestHarness
             SetAttribute(NewProduct, AccountStsAttr,      "ACT");
             SetAttribute(NewProduct, AccountCurrValAttr,  "100.00");
             SetAttribute(NewProduct, AccountCurrencyAttr, "USD");
-			// SetAttribute(NewProduct, AccountTypeAttr,     "Checking");
+	    // SetAttribute(NewProduct, AccountTypeAttr,     "Checking");
             SetAttribute(NewProduct, AccountTypeAttr,     "CompletelyBogusTypeThatWillCauseAnError");
 
             return NewProduct;
-		}
+	}
 
-		public string GetAttributeValue(WonkaProduct poTargetProduct, WonkaRefAttr poTargetAttr)
-		{
-			if (poTargetProduct.GetProductGroup(poTargetAttr.GroupId).GetRowCount() <= 0)
-				throw new Exception("ERROR!  Provided incoming product has empty group.");
+	public string GetAttributeValue(WonkaProduct poTargetProduct, WonkaRefAttr poTargetAttr)
+	{
+	    if (poTargetProduct.GetProductGroup(poTargetAttr.GroupId).GetRowCount() <= 0)
+	        throw new Exception("ERROR!  Provided incoming product has empty group.");
 
-			string sAttrValue = poTargetProduct.GetProductGroup(poTargetAttr.GroupId)[0][poTargetAttr.AttrId];
+	    string sAttrValue = poTargetProduct.GetProductGroup(poTargetAttr.GroupId)[0][poTargetAttr.AttrId];
 
-			if (String.IsNullOrEmpty(sAttrValue))
-				throw new Exception("ERROR!  Provided incoming product has no value for needed key(" + poTargetAttr.AttrName + ").");
+	    if (String.IsNullOrEmpty(sAttrValue))
+	        throw new Exception("ERROR!  Provided incoming product has no value for needed key(" + poTargetAttr.AttrName + ").");
 
             return sAttrValue;
-		}
+	}
 
-		public void SetAttribute(WonkaProduct poTargetProduct, WonkaRefAttr poTargetAttr, string psTargetValue)
+	public void SetAttribute(WonkaProduct poTargetProduct, WonkaRefAttr poTargetAttr, string psTargetValue)
         {
             if (poTargetProduct.GetProductGroup(poTargetAttr.GroupId).GetRowCount() <= 0)
                 poTargetProduct.GetProductGroup(poTargetAttr.GroupId).AppendRow();
 
             poTargetProduct.GetProductGroup(poTargetAttr.GroupId)[0][poTargetAttr.AttrId] = psTargetValue;
-		}
+	}
     }
 }
