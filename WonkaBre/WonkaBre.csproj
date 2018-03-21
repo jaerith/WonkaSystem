@@ -43,6 +43,7 @@
     <Compile Include="WonkaBreEnumerations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WonkaBreException.cs" />
+    <Compile Include="RuleTree\WonkaBreRuleValueProps.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WonkaPrd\WonkaPrd.csproj">
@@ -53,6 +54,10 @@
       <Project>{f1813200-e062-4d82-a63d-4c9cd3bc73f4}</Project>
       <Name>WonkaRef</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="RuleTree\" />
+    <Folder Include="Samples\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
