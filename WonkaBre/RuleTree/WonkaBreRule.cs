@@ -72,8 +72,8 @@ namespace WonkaBre.RuleTree
 		#region Abstract Methods
 
 		abstract public bool Execute(WonkaProduct  poTransactionRecord,
-									               WonkaProduct  poExistingRecord,
-									               StringBuilder poErrorMessage);
+					     WonkaProduct  poExistingRecord,
+					     StringBuilder poErrorMessage);
 
 		abstract public string GetVerboseError(WonkaProduct poTargetProduct);
 
@@ -112,7 +112,7 @@ namespace WonkaBre.RuleTree
 			}
 
 			if (sRecordOfInterest == "N")
-        AttributeValueProps.TargetRecord = TARGET_RECORD.TRID_NEW_RECORD;
+                        	AttributeValueProps.TargetRecord = TARGET_RECORD.TRID_NEW_RECORD;
 			else
 				AttributeValueProps.TargetRecord = TARGET_RECORD.TRID_OLD_RECORD;
 
