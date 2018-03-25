@@ -16,7 +16,7 @@
        blockchain storage, etc.).  Usually, these are 'current' records contained in storage and will be used to 
        make comparitive evaluations against the incoming record.
       -->
-      <if description="SaleableCd Mapping for E (Inner)">
+      <if description="Setting Account Status">
          <criteria op="OR">
             <eval>(O.AccountStatus) NOT POPULATED</eval>
             <eval>(O.AccountStatus) == ('OOS')</eval>
@@ -34,7 +34,7 @@
          </validate>           
       </if>
 
-      <if description="SaleableCd Mapping for S">
+      <if description="Validating Account Type">
          <criteria op="AND">
             <eval>(N.AccountType) POPULATED</eval>
             <eval>(N.AccountType) != (O.AccountType)</eval>
