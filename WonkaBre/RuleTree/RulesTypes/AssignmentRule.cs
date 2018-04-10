@@ -7,31 +7,31 @@ using WonkaRef;
 
 namespace WonkaBre.RuleTree.RuleTypes
 {
-	/// <summary>
-	/// 
-	/// This class represents the an assignment rule, which is an aggressive rule that will
-	/// assign data. For example, the following Wonka-Bre markup:
-	/// 
-	///  <validate err="severe">
-	///     <criteria op = "AND" >
-	///         <eval>(N.AccountCurrValue) GT (10.00)</eval>
-	///         <eval>(N.AccountCurrValue) LT (100000000.00)</eval>
-	///         <eval>(N.AccountStatus) ASSIGN ('ACT')</eval>
-	///     </criteria >
-	/// 
-	/// Has two instances of the ArithmeticLimitRule that focus on the Attribute 'AccountCurrValue'.
-	/// One instance evaluates whether the value of the incoming record if greater than 10.00, and 
-	/// the other instance evaluates whether the incoming value is less than 100000000.0.  If both rules 
-	/// are evaluated to TRUE, then the assignment rule below them will be invoked, setting 
-	/// the AccountStatus on the incoming record to "ACT".
-	/// 
-	/// NOTE: Since the WonkaProduct only records Attribute values as Strings, it will not validate
-	/// the data type before assignment.
-	/// 
-	/// NOTE: If the Attribute has neither a 'O' or 'N' preceding it, it will be assumed to be 'N'.
-	///  
-	/// </summary>
-	public class AssignmentRule : WonkaBreRule
+    /// <summary>
+    /// 
+    /// This class represents the an assignment rule, which is an aggressive rule that will
+    /// assign data. For example, the following Wonka-Bre markup:
+    /// 
+    ///  <validate err="severe">
+    ///     <criteria op = "AND" >
+    ///         <eval>(N.AccountCurrValue) GT (10.00)</eval>
+    ///         <eval>(N.AccountCurrValue) LT (100000000.00)</eval>
+    ///         <eval>(N.AccountStatus) ASSIGN ('ACT')</eval>
+    ///     </criteria >
+    /// 
+    /// Has two instances of the ArithmeticLimitRule that focus on the Attribute 'AccountCurrValue'.
+    /// One instance evaluates whether the value of the incoming record if greater than 10.00, and 
+    /// the other instance evaluates whether the incoming value is less than 100000000.0.  If both rules 
+    /// are evaluated to TRUE, then the assignment rule below them will be invoked, setting 
+    /// the AccountStatus on the incoming record to "ACT".
+    /// 
+    /// NOTE: Since the WonkaProduct only records Attribute values as Strings, it will not validate
+    /// the data type before assignment.
+    /// 
+    /// NOTE: If the Attribute has neither a 'O' or 'N' preceding it, it will be assumed to be 'N'.
+    ///  
+    /// </summary>
+    public class AssignmentRule : WonkaBreRule
     {
         #region Constructors
 
